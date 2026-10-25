@@ -1,0 +1,11 @@
+<% layout("/layout/boilerplate") %>
+<div class="row"><div class="col-md-8 offset-md-2 mt-4">
+  <h3>List your business for free</h3>
+  <p class="text-secondary">Customers will find you by category and city, then call or WhatsApp you directly.</p>
+  <form method="POST" action="/listings" enctype="multipart/form-data" novalidate class="needs-validation">
+    <%- include("../includes/listingFields.ejs") %>
+    <div class="mb-3"><label class="form-label">Business photo</label>
+      <input name="listing[image]" type="file" accept="image/*" class="form-control"></div>
+    <button class="btn btn-dark mb-4">Add my business</button>
+  </form>
+</div></div>

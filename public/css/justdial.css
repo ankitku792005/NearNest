@@ -1,0 +1,35 @@
+.jd-hero{background:linear-gradient(135deg,#0b2a6f,#1d4ed8);color:#fff;padding:2.5rem 0 3rem}
+.jd-hero h1{font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;margin-bottom:1.2rem}
+.jd-search{display:flex;flex-wrap:wrap;background:#fff;border-radius:10px;overflow:hidden;max-width:900px}
+.jd-search input{border:0;padding:.9rem 1rem;outline:0;font-size:1rem}
+.jd-city{flex:1 1 180px;border-right:1px solid #e5e7eb!important}
+.jd-q{flex:3 1 280px}
+.jd-go{flex:0 0 auto;border:0;background:#f97316;color:#fff;font-weight:600;padding:0 1.6rem;min-height:50px}
+.jd-go:hover{background:#ea580c}
+.jd-cats{display:flex;gap:.6rem;overflow-x:auto;padding:1rem 0;margin-top:-1.8rem}
+.jd-cats a{flex:0 0 auto;min-width:92px;text-align:center;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:.7rem .5rem;color:#111;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,.06)}
+.jd-cats a i{display:block;font-size:1.5rem;color:#1d4ed8}
+.jd-cats a span{font-size:.78rem;font-weight:600}
+.jd-cats a.active{border-color:#1d4ed8;background:#eff4ff}
+.jd-chip{font-size:.8rem;padding:.25rem .7rem;border:1px solid #d1d5db;border-radius:99px;color:#374151;text-decoration:none}
+.jd-chip.active{background:#111;color:#fff;border-color:#111}
+.jd-card{display:flex;gap:1rem;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1rem;margin-bottom:1rem}
+.jd-card:hover{box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.jd-img{flex:0 0 220px}
+.jd-img img{width:100%;height:170px;object-fit:cover;border-radius:10px}
+.jd-body{flex:1;min-width:0}
+.jd-title{font-size:1.2rem;font-weight:700;color:#111;text-decoration:none}
+.jd-title:hover{color:#1d4ed8}
+.jd-meta{display:flex;align-items:center;gap:.5rem;margin:.3rem 0}
+.jd-rate{background:#16a34a;color:#fff;font-weight:700;font-size:.8rem;padding:.1rem .45rem;border-radius:5px}
+.jd-rate.new{background:#f59e0b}
+.jd-desc{font-size:.9rem;color:#4b5563;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.jd-actions{display:flex;flex-wrap:wrap;gap:.5rem}
+.jd-actions a{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none}
+.btn-call{background:#16a34a;color:#fff}.btn-call:hover{background:#15803d;color:#fff}
+.btn-wa{background:#25d366;color:#fff}.btn-wa:hover{background:#1ebe5a;color:#fff}
+.btn-ghost{border:1px solid #d1d5db;color:#111}.btn-ghost:hover{background:#f3f4f6}
+@media(max-width:640px){.jd-card{flex-direction:column}.jd-img{flex:none}.jd-img img{height:190px}.jd-city{border-right:0!important;border-bottom:1px solid #e5e7eb!important}.jd-go{width:100%}}
+
+/* fix: style.css sets #map width to 100vh (viewport height), which breaks on phones */
+#map{width:100%;max-width:100%;border-radius:12px}

@@ -1,0 +1,199 @@
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Detail page card and image */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+.card-img-top {
+  border-radius: 1rem !important;
+  width: 100%;
+}
+.card-text p {
+  font-weight: 400;
+}
+.link {
+  text-decoration: none;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: white;
+}
+
+/* Map on the detail page */
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+/* ---------- Footer ---------- */
+footer.jd-footer {
+  background: #5771af;
+  color: #cbd5e1;
+  padding: 3rem 0 1rem;
+  margin-top: 3rem;
+  flex-shrink: 0;
+}
+.jd-footer-brand { color: #fff; font-weight: 700; font-size: 1.5rem; }
+.jd-footer h6 { color: #fff; font-weight: 700; margin-bottom: 1rem; }
+.jd-footer-text { font-size: .92rem; line-height: 1.6; }
+.jd-footer-links { list-style: none; padding: 0; margin: 0; font-size: .92rem; }
+.jd-footer-links li { margin-bottom: .55rem; }
+.jd-footer-links i { color: #f97316; margin-right: .4rem; }
+.jd-footer a { color: #cbd5e1; text-decoration: none; transition: color .2s; }
+.jd-footer a:hover { color: #f97316; }
+.jd-socials { display: flex; gap: .6rem; margin-top: 1rem; }
+.jd-socials a {
+  width: 38px; height: 38px; display: grid; place-items: center;
+  border-radius: 50%; background: rgba(255,255,255,.1); color: #fff; font-size: 1.1rem;
+}
+.jd-socials a:hover { background: #f97316; color: #fff; }
+.jd-footer-bottom {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem;
+  border-top: 1px solid rgba(255,255,255,.15);
+  margin-top: 2rem; padding-top: 1rem; font-size: .85rem;
+}
+
+
+
+
+/* ---------- Error page ---------- */
+.jd-error {
+  max-width: 560px;
+  margin: 4rem auto;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+.jd-error-code {
+  font-size: clamp(5rem, 18vw, 8rem);
+  font-weight: 800;
+  line-height: 1;
+  background: linear-gradient(135deg, #1d4ed8, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.jd-error-title { font-weight: 700; margin: 1rem 0 .5rem; }
+.jd-error-msg {
+  display: inline-block;
+  background: #fff4ed;
+  color: #c2410c;
+  font-weight: 600;
+  padding: .3rem .9rem;
+  border-radius: 99px;
+  font-size: .9rem;
+}
+.jd-error-help { color: #6b7280; margin: 1rem 0 1.5rem; }
+.jd-error-search {
+  display: flex;
+  max-width: 420px;
+  margin: 0 auto 1.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.jd-error-search input { flex: 1; border: 0; padding: .7rem 1rem; outline: 0; }
+.jd-error-search button { border: 0; background: #f97316; color: #fff; padding: 0 1.1rem; }
+.jd-error-search button:hover { background: #ea580c; }
+.jd-error-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: .6rem; }
+/* Discovery page
+.discovery-header {
+    background: #f3eee5;
+    color: #282820;
+}
+
+.discovery-header > span {
+    letter-spacing: 2px;
+    color: #716a54;
+}
+
+.discovery-header p {
+    color: #625f55;
+}
+
+.search-panel {
+    max-width: 950px;
+}
+
+.search-panel .form-control {
+    border: 1px solid #e1ddd4;
+    border-radius: 12px;
+}
+
+.search-panel .btn {
+    border-radius: 12px;
+}
+
+/* Listing cards */
+/* .discovery-card {
+    border: 1px solid #ece9e2;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.discovery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.image-wrapper {
+    height: 230px;
+    position: relative;
+    overflow: hidden;
+    background: #eeeae2;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.discovery-card:hover .image-wrapper img {
+    transform: scale(1.04);
+}
+
+.image-label {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    background: #fff;
+    color: #333;
+    border-radius: 20px;
+    padding: 6px 11px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.card-description {
+    color: #66645e;
+    font-size: 0.92rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer-custom {
+    border-top: 1px solid #eeeae3;
+}
+
+.explore-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6c654e;
+}  */

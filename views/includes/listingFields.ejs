@@ -1,0 +1,48 @@
+<% const L = typeof listing !== "undefined" ? listing : {}; %>
+<div class="mb-3">
+  <label class="form-label">Business name</label>
+  <input name="listing[title]" value="<%= L.title || '' %>" class="form-control" required>
+</div>
+<div class="row">
+  <div class="mb-3 col-md-6">
+    <label class="form-label">Category</label>
+    <select name="listing[category]" class="form-select" required>
+      <option value="" disabled <%= L.category ? "" : "selected" %>>Select a category</option>
+      <% categories.forEach(c => { %>
+        <option value="<%= c.name %>" <%= L.category === c.name ? "selected" : "" %>><%= c.name %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="mb-3 col-md-6">
+    <label class="form-label">Opening hours</label>
+    <input name="listing[hours]" value="<%= L.hours || '' %>" class="form-control" placeholder="Mon-Sat 9am - 8pm">
+  </div>
+</div>
+<div class="mb-3">
+  <label class="form-label">About your business</label>
+  <textarea name="listing[description]" rows="4" class="form-control" required><%= L.description || '' %></textarea>
+</div>
+<div class="row">
+  <div class="mb-3 col-md-6">
+    <label class="form-label">Area / City</label>
+    <input name="listing[location]" value="<%= L.location || '' %>" class="form-control" placeholder="Howrah" required>
+  </div>
+  <div class="mb-3 col-md-6">
+    <label class="form-label">Country</label>
+    <input name="listing[country]" value="<%= L.country || 'India' %>" class="form-control" required>
+  </div>
+</div>
+<div class="row">
+  <div class="mb-3 col-md-4"><label class="form-label">Phone</label>
+    <input name="listing[phone]" value="<%= L.phone || '' %>" class="form-control"></div>
+  <div class="mb-3 col-md-4"><label class="form-label">WhatsApp (optional)</label>
+    <input name="listing[whatsapp]" value="<%= L.whatsapp || '' %>" class="form-control"></div>
+  <div class="mb-3 col-md-4"><label class="form-label">Email</label>
+    <input type="email" name="listing[email]" value="<%= L.email || '' %>" class="form-control"></div>
+</div>
+<div class="row">
+  <!-- <div class="mb-3 col-md-6"><label class="form-label">Website</label> -->
+    <!-- <input name="listing[website]" value="<%= L.website || '' %>" class="form-control" placeholder="https://"></div> -->
+  <div class="mb-3 col-md-6"><label class="form-label">Starting price (₹, optional)</label>
+    <input type="number" min="0" name="listing[price]" value="<%= L.price || '' %>" class="form-control"></div>
+</div>

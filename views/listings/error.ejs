@@ -1,0 +1,85 @@
+<!-- <% layout("/layout/boilerplate") %>
+
+<div class="container">
+  <div class="row justify-content-center align-items-center"
+       style="min-height: 70vh;">
+
+    <div class="col-md-8 col-lg-6">
+
+      <div class="card border-0 shadow-lg rounded-4 text-center p-4">
+
+        Error Icon
+        <div class="mb-3">
+          <div
+            class="d-inline-flex justify-content-center align-items-center rounded-circle bg-danger-subtle"
+            style="width: 90px; height: 90px;"
+          >
+            <span style="font-size: 45px;">⚠️</span>
+          </div>
+        </div> -->
+
+        <!-- Error Code -->
+        <!-- <h1 class="display-1 fw-bold text-danger">
+        <%= statusCode || 500 %> 
+        </h1> -->
+
+        <!-- Error Message -->
+        <!-- <h2 class="fw-semibold mb-3">
+          <%= message || "Something went wrong!" %>
+        </h2>
+
+        <p class="text-secondary fs-5 mb-4">
+          Oops! It looks like you've taken a wrong turn.
+          Don't worry, let's get you back on the right path.
+        </p> -->
+
+        <!-- Buttons -->
+        <!-- <div class="d-flex justify-content-center gap-2">
+
+          <a href="/listings" class="btn btn-dark px-4">
+            🏠 Back to Listings
+          </a>
+
+          <a href="/" class="btn btn-outline-dark px-4">
+            Go Home
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div> -->
+
+
+<% layout("/layout/boilerplate") %>
+
+<div class="container">
+  <div class="jd-error">
+
+    <div class="jd-error-code"><%= statusCode || 500 %></div>
+
+    <h2 class="jd-error-title">
+      <%= statusCode === 404 ? "Page not found" : "Something went wrong" %>
+    </h2>
+
+    <p class="jd-error-msg"><%= message || "An unexpected error occurred." %></p>
+
+    <p class="jd-error-help">
+      The page you are looking for may have been moved or deleted.
+      Try searching for what you need instead.
+    </p>
+
+    <!-- <form action="/listings" method="GET" class="jd-error-search">
+      <input type="text" name="q" placeholder="Search for restaurants, doctors, salons...">
+      <button><i class="bi bi-search"></i></button>
+    </form> -->
+
+    <!-- <div class="jd-error-actions">
+      <a href="/listings" class="btn btn-dark px-4"><i class="bi bi-grid"></i> Browse businesses</a>
+      <a href="javascript:history.back()" class="btn btn-outline-dark px-4"><i class="bi bi-arrow-left"></i> Go back</a>
+    </div> -->
+
+  </div>
+</div>

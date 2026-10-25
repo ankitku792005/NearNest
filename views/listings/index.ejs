@@ -1,0 +1,66 @@
+<% layout("/layout/boilerplate") %>
+<% const qs = (o) => new URLSearchParams(Object.fromEntries(Object.entries({ q, location, category, sort, ...o }).filter(([k, v]) => v))).toString(); %>
+
+<section class="jd-hero">
+  <div class="container">
+    <h1>Search across businesses near you</h1>
+    <form action="/listings" method="GET" class="jd-search">
+      <input type="text" name="location" value="<%= location || '' %>" placeholder="City or area" class="jd-city">
+      <input type="text" name="q" value="<%= q || '' %>" placeholder="Search for restaurants, doctors, salons..." class="jd-q">
+      <% if (category) { %><input type="hidden" name="category" value="<%= category %>"><% } %>
+      <button class="jd-go"><i class="bi bi-search"></i> Search</button>
+    </form>
+  </div>
+</section>
+
+<div class="container">
+  <div class="jd-cats">
+    <a href="/listings?<%= qs({ category: '' }) %>" class="<%= !category ? 'active' : '' %>"><i class="bi bi-grid-3x3-gap"></i><span>All</span></a>
+    <% categories.forEach(c => { %>
+      <a href="/listings?<%= qs({ category: c.name }) %>" class="<%= category === c.name ? 'active' : '' %>"><i class="bi <%= c.icon %>"></i><span><%= c.name %></span></a>
+    <% }) %>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-between align-items-center my-3">
+    <h5 class="mb-0"><%= listings.length %> result<%= listings.length === 1 ? '' : 's' %><%= category ? ' in ' + category : '' %></h5>
+    <div class="d-flex gap-2 align-items-center">
+      <span class="small text-secondary">Sort:</span>
+      <% [['rating','Top rated'],['newest','Newest'],['name','A-Z']].forEach(([v, t]) => { %>
+        <a href="/listings?<%= qs({ sort: v }) %>" class="jd-chip <%= sort === v ? 'active' : '' %>"><%= t %></a>
+      <% }) %>
+    </div>
+  </div>
+
+  <% listings.forEach(l => { %>
+    <article class="jd-card">
+      <a href="/listings/<%= l._id %>" class="jd-img">
+        <img src="<%= l.image && l.image.url ? l.image.url : 'https://placehold.co/300x220?text=No+Photo' %>" alt="<%= l.title %>" loading="lazy">
+      </a>
+      <div class="jd-body">
+        <a href="/listings/<%= l._id %>" class="jd-title"><%= l.title %></a>
+        <div class="jd-meta">
+          <% if (l.count) { %><span class="jd-rate"><%= l.rating.toFixed(1) %> <i class="bi bi-star-fill"></i></span><span class="text-secondary small"><%= l.count %> Rating<%= l.count > 1 ? 's' : '' %></span>
+          <% } else { %><span class="jd-rate new">New</span><% } %>
+          <span class="small text-secondary">· <%= l.category %></span>
+        </div>
+        <p class="small mb-1"><i class="bi bi-geo-alt"></i> <%= l.location %><%= l.country ? ', ' + l.country : '' %></p>
+        <% if (l.hours) { %><p class="small text-secondary mb-1"><i class="bi bi-clock"></i> <%= l.hours %></p><% } %>
+        <p class="jd-desc"><%= l.description %></p>
+        <div class="jd-actions">
+          <% if (l.phone) { %><a class="btn-call" href="tel:<%= l.phone %>"><i class="bi bi-telephone-fill"></i> <%= l.phone %></a><% } %>
+          <% if (waLink(l.whatsapp || l.phone)) { %><a class="btn-wa" target="_blank" rel="noopener" href="<%= waLink(l.whatsapp || l.phone) %>"><i class="bi bi-whatsapp"></i> WhatsApp</a><% } %>
+          <a class="btn-ghost" href="/listings/<%= l._id %>">View details</a>
+        </div>
+      </div>
+    </article>
+  <% }) %>
+
+  <% if (!listings.length) { %>
+    <div class="text-center py-5">
+      <h3 class="fw-bold">No businesses found</h3>
+      <p class="text-secondary">Try another keyword or city, or be the first to list here.</p>
+      <a href="/listings" class="btn btn-dark me-2">Clear search</a>
+      <a href="/listings/new" class="btn btn-outline-dark">List your business</a>
+    </div>
+  <% } %>
+</div>
